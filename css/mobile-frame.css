@@ -1,0 +1,269 @@
+/* ==========================================================================
+   Society Staff Management System - Presentation Showcase & Device Mockup Frame
+   ========================================================================== */
+
+/* Outer Workbench */
+.workbench {
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 100%);
+  color: #F8FAFC;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Control Bar Header */
+.workbench-header {
+  height: 64px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 500;
+}
+
+.brand-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 800;
+  box-shadow: 0 4px 12px var(--primary-glow);
+}
+
+.brand-title-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+.brand-tag {
+  font-size: 0.72rem;
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #F8FAFC;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition-fast);
+}
+
+.control-btn:hover, .control-btn.active {
+  background: var(--primary);
+  border-color: var(--secondary);
+  color: #fff;
+  box-shadow: 0 4px 12px var(--primary-glow);
+}
+
+.role-pill-select {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+/* Workbench Main Container */
+.workbench-content {
+  flex: 1;
+  padding: 32px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+}
+
+/* Single Interactive Mobile Device Mockup */
+.device-frame-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.device-mockup {
+  width: 390px;
+  height: 820px;
+  background: #000;
+  border-radius: 48px;
+  padding: 12px;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+/* iPhone Dynamic Island / Speaker Notch */
+.device-notch {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 28px;
+  background: #000;
+  border-radius: 20px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 12px;
+}
+
+.camera-lens {
+  width: 10px;
+  height: 10px;
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 50%;
+}
+
+.device-screen {
+  width: 100%;
+  height: 100%;
+  background: var(--background);
+  border-radius: 38px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Status Bar */
+.status-bar {
+  height: 40px;
+  padding: 12px 24px 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  z-index: 90;
+}
+
+.status-bar-icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Dynamic Screen Body Router */
+.screen-router-viewport {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 16px 84px 16px;
+  position: relative;
+}
+
+/* Screen Selector Bar (Bottom of Single Device View) */
+.screen-quick-switcher {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  max-width: 900px;
+  padding: 8px 16px;
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.screen-switch-chip {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.screen-switch-chip:hover, .screen-switch-chip.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Gallery Grid Mode View (50+ Screen Cards Showcase) */
+.gallery-grid-view {
+  width: 100%;
+  max-width: 1400px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.gallery-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: var(--transition-normal);
+}
+
+.gallery-card:hover {
+  border-color: var(--secondary);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gallery-screen-preview {
+  width: 100%;
+  height: 580px;
+  background: var(--background);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  position: relative;
+}

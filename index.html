@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Society Staff OS - Enterprise Mobile App Showcase (52+ Screens)</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/mobile-frame.css">
+  <style>
+    /* Styled Select Dropdown for Role Switcher */
+    .role-pill-select {
+      background: #0f172a;
+      color: #F8FAFC;
+      border: 1px solid rgba(20, 184, 166, 0.5);
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      outline: none;
+    }
+    .role-pill-select option {
+      background: #0f172a;
+      color: #F8FAFC;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="workbench">
+  <!-- Workbench Top Header Controls -->
+  <header class="workbench-header">
+    <div class="brand-badge">
+      <div class="brand-logo">S</div>
+      <div class="brand-title-wrap">
+        <span class="brand-title">Society Staff OS</span>
+        <span class="brand-tag">52+ Enterprise Screens Showcase</span>
+      </div>
+    </div>
+
+    <div class="controls-group">
+      <!-- Role Selector Dropdown -->
+      <select class="role-pill-select" id="globalRoleSelect">
+        <option value="Admin">🛡️ Role: Admin View</option>
+        <option value="Management">🛠️ Role: Management View</option>
+        <option value="Employee">👤 Role: Employee View</option>
+      </select>
+
+      <!-- Theme Switcher -->
+      <button class="control-btn" id="themeToggleBtn">
+        <i class="ri-moon-line"></i> Dark Mode
+      </button>
+
+      <!-- View Mode Buttons -->
+      <button class="control-btn active" data-view-mode="single">
+        <i class="ri-smartphone-line"></i> Single Device
+      </button>
+      <button class="control-btn" data-view-mode="gallery">
+        <i class="ri-grid-fill"></i> 52 Screens Gallery
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Workbench Body -->
+  <main class="workbench-content">
+
+    <!-- SINGLE DEVICE INTERACTIVE MODE -->
+    <div class="device-frame-container" id="singleDeviceWrapper">
+      
+      <!-- 52 Screens Quick Switcher Chips -->
+      <div class="screen-quick-switcher">
+        <span style="font-size:0.75rem; font-weight:800; color:var(--secondary); align-self:center; padding-right:4px;">ADMIN:</span>
+        <span class="screen-switch-chip active" onclick="App.renderScreen('admin-dashboard')" data-screen="admin-dashboard">Admin Dash</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('emp-list-admin')" data-screen="emp-list-admin">Staff Directory</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('emp-details')" data-screen="emp-details">Staff Profile</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('add-emp')" data-screen="add-emp">Add Staff Wizard</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('dept-designation')" data-screen="dept-designation">Departments</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('attendance-admin')" data-screen="attendance-admin">Attendance Console</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('payroll-admin')" data-screen="payroll-admin">Payroll Overview</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('salary-gen')" data-screen="salary-gen">Process Payout</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('inventory-admin')" data-screen="inventory-admin">Inventory Assets</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('settings-admin')" data-screen="settings-admin">Settings & Security</span>
+
+        <span style="font-size:0.75rem; font-weight:800; color:var(--accent); align-self:center; padding:0 4px;">MANAGEMENT:</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('mgmt-dashboard')" data-screen="mgmt-dashboard">Mgmt Dash</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('mgmt-emp-summary')" data-screen="mgmt-emp-summary">Roster Summary</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('mgmt-attendance')" data-screen="mgmt-attendance">Log Verifier</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('mgmt-leave-approval')" data-screen="mgmt-leave-approval">Leave Approvals</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('mgmt-late-logs')" data-screen="mgmt-late-logs">Late Exceptions</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('mgmt-inventory-stock')" data-screen="mgmt-inventory-stock">Stock In/Out Entry</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('mgmt-vendor')" data-screen="mgmt-vendor">Approved Vendors</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('mgmt-qr-scanner')" data-screen="mgmt-qr-scanner">Asset QR Scanner</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('mgmt-announcements')" data-screen="mgmt-announcements">Broadcast Notice</span>
+
+        <span style="font-size:0.75rem; font-weight:800; color:#8B5CF6; align-self:center; padding:0 4px;">EMPLOYEE:</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('emp-dashboard')" data-screen="emp-dashboard">Emp Dash</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('emp-shift-clock')" data-screen="emp-shift-clock">Shift Clock</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('emp-leave-balance')" data-screen="emp-leave-balance">Leave Balances</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('emp-apply-leave')" data-screen="emp-apply-leave">Apply Leave</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('emp-leave-history')" data-screen="emp-leave-history">My Leaves</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('emp-salary-summary')" data-screen="emp-salary-summary">Salary History</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('emp-payslip-pdf')" data-screen="emp-payslip-pdf">Formal Payslip PDF</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('emp-my-profile')" data-screen="emp-my-profile">Emp Profile</span>
+
+        <span style="font-size:0.75rem; font-weight:800; color:#3B82F6; align-self:center; padding:0 4px;">AI & SYSTEM:</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('scanner')" data-screen="scanner">AI Face Scan</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('face-reg')" data-screen="face-reg">AI Face Setup</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('face-reg-success')" data-screen="face-reg-success">Face Saved</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('reports-overview')" data-screen="reports-overview">Analytics Dashboard</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('holiday-calendar')" data-screen="holiday-calendar">Holidays</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('notifications')" data-screen="notifications">Notifications</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('splash')" data-screen="splash">Splash Screen</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('login')" data-screen="login">Login Screen</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('role-select')" data-screen="role-select">Choose Role</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('dark-mode')" data-screen="dark-mode">Dark Mode View</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('empty-state')" data-screen="empty-state">Empty State</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('loading-skeleton')" data-screen="loading-skeleton">Loading Skeleton</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('error-screen')" data-screen="error-screen">Error Screen</span>
+        <span class="screen-switch-chip" onclick="App.renderScreen('success-dialog')" data-screen="success-dialog">Success Dialog</span>
+      </div>
+
+      <!-- iPhone 16 Pro Device Shell -->
+      <div class="device-mockup">
+        <div class="device-notch">
+          <div class="camera-lens"></div>
+        </div>
+
+        <div class="device-screen">
+          
+          <!-- Top App Bar -->
+          <div class="app-header">
+            <div class="header-user">
+              <button class="icon-btn" onclick="App.toggleDrawer(true)">
+                <i class="ri-menu-2-line" style="font-size:1.2rem;"></i>
+              </button>
+              <div class="avatar-badge-wrap">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200" id="headerUserAvatar" class="user-avatar" />
+                <span class="online-dot"></span>
+              </div>
+              <div class="user-text-greeting">
+                <span class="user-greeting">Society OS</span>
+                <span class="user-name" id="headerUserName">Vikramaditya S.</span>
+              </div>
+            </div>
+
+            <div class="header-actions">
+              <button class="icon-btn" onclick="App.renderScreen('notifications')">
+                <i class="ri-notification-3-line"></i>
+                <span class="badge-dot"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Dynamic Screen Viewport -->
+          <div class="screen-router-viewport" id="mobileScreenViewport">
+            <!-- Rendered by JS Router -->
+          </div>
+
+          <!-- Bottom Navigation Bar -->
+          <nav class="bottom-nav">
+            <div class="nav-item active" data-tab="admin-dashboard" onclick="App.renderScreen(AppState.currentRole === 'Employee' ? 'emp-dashboard' : AppState.currentRole === 'Management' ? 'mgmt-dashboard' : 'admin-dashboard')">
+              <i class="ri-dashboard-3-line"></i>
+              <span>Home</span>
+            </div>
+
+            <div class="nav-item" data-tab="emp-list-admin" onclick="App.renderScreen(AppState.currentRole === 'Employee' ? 'emp-my-profile' : 'emp-list-admin')">
+              <i class="ri-team-line"></i>
+              <span>Staff</span>
+            </div>
+
+            <!-- Central FAB for AI Face Attendance Scanner -->
+            <div class="nav-fab-wrap">
+              <button class="nav-fab" onclick="App.renderScreen('scanner')">
+                <i class="ri-user-scan-line"></i>
+              </button>
+            </div>
+
+            <div class="nav-item" onclick="App.renderScreen(AppState.currentRole === 'Employee' ? 'emp-leave-balance' : 'attendance-admin')">
+              <i class="ri-calendar-check-line"></i>
+              <span>Attendance</span>
+            </div>
+
+            <div class="nav-item" onclick="App.renderScreen(AppState.currentRole === 'Employee' ? 'emp-payslip-pdf' : 'inventory-admin')">
+              <i class="ri-box-3-line"></i>
+              <span>Stock/Pay</span>
+            </div>
+          </nav>
+
+          <!-- Drawer Navigation Panel -->
+          <div class="drawer-overlay" id="drawerOverlay" onclick="App.toggleDrawer(false)">
+            <div class="drawer-panel" onclick="event.stopPropagation();">
+              <div class="drawer-header">
+                <div class="drawer-user-info">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200" id="drawerUserAvatar" class="drawer-avatar" />
+                  <div>
+                    <div style="font-weight:800; font-size:1.05rem;" id="drawerUserName">Vikramaditya S.</div>
+                    <span class="drawer-role-badge" id="drawerRoleBadgeText">Admin View</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="drawer-nav-list">
+                <div class="drawer-item" onclick="App.toggleDrawer(false); App.renderScreen('admin-dashboard');">
+                  <i class="ri-shield-star-line"></i> Admin Dashboard
+                </div>
+                <div class="drawer-item" onclick="App.toggleDrawer(false); App.renderScreen('mgmt-dashboard');">
+                  <i class="ri-briefcase-line"></i> Management Dashboard
+                </div>
+                <div class="drawer-item" onclick="App.toggleDrawer(false); App.renderScreen('emp-dashboard');">
+                  <i class="ri-user-smile-line"></i> Employee Dashboard
+                </div>
+                <div class="drawer-item" onclick="App.toggleDrawer(false); App.renderScreen('emp-list-admin');">
+                  <i class="ri-team-line"></i> Staff Directory <span class="drawer-badge">48</span>
+                </div>
+                <div class="drawer-item" onclick="App.toggleDrawer(false); App.renderScreen('attendance-admin');">
+                  <i class="ri-time-line"></i> Live Attendance Logs
+                </div>
+                <div class="drawer-item" onclick="App.toggleDrawer(false); App.renderScreen('mgmt-leave-approval');">
+                  <i class="ri-calendar-event-line"></i> Leave Requests <span class="drawer-badge">4</span>
+                </div>
+                <div class="drawer-item" onclick="App.toggleDrawer(false); App.renderScreen('payroll-admin');">
+                  <i class="ri-bank-card-line"></i> Payroll & Salary Slips
+                </div>
+                <div class="drawer-item" onclick="App.toggleDrawer(false); App.renderScreen('inventory-admin');">
+                  <i class="ri-archive-line"></i> Inventory & Vendors
+                </div>
+                <div class="drawer-item" onclick="App.toggleDrawer(false); App.renderScreen('reports-overview');">
+                  <i class="ri-pie-chart-line"></i> Analytics & Reports
+                </div>
+                <div class="drawer-item" onclick="App.toggleDrawer(false); App.renderScreen('settings-admin');">
+                  <i class="ri-settings-4-line"></i> Settings & Biometrics
+                </div>
+                <div class="drawer-item" style="color:var(--danger);" onclick="App.toggleDrawer(false); App.renderScreen('login');">
+                  <i class="ri-logout-box-r-line"></i> Sign Out
+                </div>
+              </div>
+
+              <div class="drawer-footer">
+                <span>Greenwood Heights v2.4</span>
+                <span class="badge badge-success">Online</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- GALLERY GRID ALL 52 SCREENS MODE -->
+    <div id="galleryGridWrapper" style="display: none; width:100%; max-width:1400px; padding:0 12px;">
+      <!-- Generated via JavaScript -->
+    </div>
+
+  </main>
+</div>
+
+<!-- Bottom Sheet Modals -->
+<div class="modal-overlay" id="addEmployeeModal">
+  <div class="bottom-sheet-modal">
+    <div class="sheet-handle"></div>
+    <div class="section-title" style="margin-bottom:12px;"><i class="ri-user-add-line" style="color:var(--primary);"></i> Register New Staff Member</div>
+    
+    <div class="input-group">
+      <label class="input-label">Full Name</label>
+      <input type="text" class="input-control" placeholder="e.g. Ramesh Pawar" />
+    </div>
+
+    <div class="input-group">
+      <label class="input-label">Department</label>
+      <select class="input-control" style="padding-left:14px;">
+        <option>Security</option>
+        <option>Maintenance</option>
+        <option>Housekeeping</option>
+        <option>Gardening</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label class="input-label">Designation</label>
+      <input type="text" class="input-control" placeholder="e.g. Senior Guard" />
+    </div>
+
+    <div class="input-group">
+      <label class="input-label">Base Monthly Salary (₹)</label>
+      <input type="number" class="input-control" placeholder="25000" />
+    </div>
+
+    <div style="display:flex; gap:10px; margin-top:16px;">
+      <button class="btn-secondary" onclick="App.closeModal('addEmployeeModal')">Cancel</button>
+      <button class="btn-primary" onclick="App.closeModal('addEmployeeModal'); App.renderScreen('face-reg');">Save & Setup AI Face Vector</button>
+    </div>
+  </div>
+</div>
+
+<!-- JS Core Scripts -->
+<script src="js/mock-data.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
